@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Add a new project{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="proj_name">Project Name:</label>
+    <input name="proj_name" id="proj_name" required>
+    <br>
+    <label for="description">Project description</label> <br>
+    <textarea name="description" id="description" required rows="4" cols="50" placeholder="Enter your project description..."></textarea>
+    <br>
+    <label for="manager">Project Manager:</label>
+    <input name="manager" id="manager" required>
+    <br>
+    <input type="submit" value="Create">
+  </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="proj_navigation">
+        <a href="{{ url_for('new_proj.new_proj') }}">New Project</a>
+    </div>
+  <h1>{% block title %}Projects{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="all_projs">
+    {% for project in projects %}
+        <div class="proj_table_div">
+        <table class="proj_table">
+            <colgroup>
+                <col span="1" id="col_heads">
+            </colgroup>
+            <tr>
+                <th>Project Name</th>
+                <td>{{ project['proj_name'] }}</td>
+            </tr>
+            <tr>
+                <th>Project Manager</th>
+                <td>{{ project['manager'] }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td class="proj_desc">{{ project['description'] }}</td>
+            </tr>
+            <tfoot>
+                <td colspan="2" height="40px">
+                    <a href="">Manage Risks</a>
+                    <a href="">Manage Team</a>
+                </td>
+            </tfoot>
+        </table>
+        </div>
+        <br>
+    {%  endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - Project Management</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav>
+    <div class="nav_banner">
+        <div><h2>XYZ Corp Project Tracking Tool</h2></div>
+        <div>
+        <a id=home href="/">&#xf015;</a>
+        <a href="{{ url_for('projects.projects') }}">Manage Projects</a>
+        <a href="{{ url_for('time.time') }}">Manage Time</a>
+        </div>
+    </div>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

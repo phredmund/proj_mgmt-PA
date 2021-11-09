@@ -1,0 +1,123 @@
+* {
+        box-sizing: border-box;
+}
+
+h2 {
+    font-size: 30px;
+    float: top;
+    margin: 0 0 0 0;
+}
+
+.nav_banner {
+    width:  calc(100% - 10px);
+    height: 100px;
+    background: lightslategray;
+    overflow: hidden;
+    padding-left: 10px;
+    border-style: solid;
+
+}
+
+.nav_banner a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    border: 2px groove black;
+    border-radius: 12px;
+    margin: 5px 10px 10px 10px
+}
+
+.nav_banner a:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+#home{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 5px 2px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: FontAwesome;
+    border: 2px groove black;
+    border-radius: 12px;
+    margin: 5px 10px 10px 10px
+}
+
+#home:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+.all_projs {
+    float: left;
+}
+
+.proj_table_div {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.proj_table a {
+    color: black;
+    text-align: center;
+    padding: 5px 2px;
+    text-decoration: none;
+    font-size: 15px;
+    border: 2px groove black;
+    border-radius: 12px;
+    margin-top: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.proj_table a:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+.proj_table_div table {
+    border: 1px solid black;
+    text-align: left;
+    margin: auto;
+}
+
+.proj_table {
+    width: 800px;
+}
+
+.proj_navigation {
+    width:  200px;
+    height: 55px;
+    background: #556677;
+    overflow: hidden;
+    padding-left: 20px;
+    border-style: solid;
+    margin-top: -3px;
+    margin-left: 50px;
+}
+
+.proj_navigation a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px groove black;
+    border-radius: 12px;
+    margin: 5px 10px 10px 10px
+}
+
+.proj_navigation a:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+#col_heads {
+    width: 150px;
+}
