@@ -29,8 +29,9 @@
             </tr>
             <tfoot>
                 <td colspan="2" height="40px">
-                    <a href="">Manage Risks</a>
+                    <a href="{{ url_for('risks.risks', id=project['id']) }}">Manage Risks</a>
                     <a href="">Manage Team</a>
+                    <a href="">Manage Requirements</a>
                 </td>
             </tfoot>
         </table>

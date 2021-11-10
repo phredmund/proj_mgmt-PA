@@ -25,11 +25,6 @@ def create_app(test_config=None, par1=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World! Test456'
-
     @app.route('/')
     def mainpage():
         return flask.render_template('base.html')
@@ -48,5 +43,8 @@ def create_app(test_config=None, par1=None):
 
     import proj_mgmt.proj_mgmt.time as time
     app.register_blueprint(time.bp)
+
+    import proj_mgmt.proj_mgmt.risks as risks
+    app.register_blueprint(risks.bp)
 
     return app

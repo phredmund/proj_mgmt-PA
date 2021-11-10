@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="proj_navigation">
+        <a href="{{ url_for('new_risk.new_risk', id=id) }}">New Risk</a>
+    </div>
+  <h1>{% block title %}Risks for {{ projects['proj_name'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="all_risks">
+    {% for risk in risks %}
+        <div class="risk_table_div">
+        <table class="risk_table">
+            <colgroup>
+                <col span="1" id="col_heads">
+            </colgroup>
+            <tr>
+                <th>Risk Name</th>
+                <td>{{ risk['risk_name'] }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td class="risk_desc">{{ risk['description'] }}</td>
+            </tr>
+                <tr>
+                <th>Severity</th>
+                <td>{{ risk['severity'] }}</td>
+            </tr>
+            </tr>
+                <tr>
+                <th>Mitigated?</th>
+                <td>{% if risk['mitigated'] == 0 %}
+                    No
+                    {% else %}
+                    Yes
+                    {% endif %}
+                </td>
+            </tr>
+            <tfoot>
+                <td colspan="2" height="40px">
+                    <a href="">Edit</a>
+                </td>
+            </tfoot>
+        </table>
+        </div>
+        <br>
+    {%  endfor %}
+    </div>
+{% endblock %}

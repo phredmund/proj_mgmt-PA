@@ -10,13 +10,13 @@ from db import get_db
 bp = Blueprint('new_risk', __name__, url_prefix='/')
 
 
-@bp.route('/new_risk', methods=('GET', 'POST'))
-def new_risk():
+@bp.route('/new_risk?id=<int:id>', methods=('GET', 'POST'))
+def new_risk(id):
     if request.method == 'POST':
         risk_name = request.form['risk_name']
         description = request.form['description']
         severity = request.form['severity']
-        proj_name = request.form['proj_name']
+        proj_id = id
         db = get_db()
         error = None
 
@@ -31,13 +31,13 @@ def new_risk():
             try:
                 db.execute(
                     "INSERT INTO risks (risk_name, description, severity, project_name, mitigated) VALUES (?, ?, ?, ?, 0)",
-                    (risk_name, description, severity, proj_name)
+                    (risk_name, description, severity, proj_id)
                 )
                 db.commit()
             except db.IntegrityError:
                 error = f"Project {risk_name} already exists."
             else:
-                return redirect(url_for("new_risk.new_risk"))
+                return redirect(url_for("risks.risks", id=id))
 
         flash(error)
 
